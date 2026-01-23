@@ -1,10 +1,11 @@
 from model.produto import Produto
 import sys
 
+
 class Produto_View:
     def __init__(self):
         self.controller = None
-    
+
     def show_menu(self):
         print("=== Menu de Produtos ===")
         print("1. Adicionar Produto")
@@ -13,11 +14,10 @@ class Produto_View:
         print("4. Listar Produtos")
         print("5. Buscar Produto por ID")
         print("6. Sair")
-        
+
     def get_user_choice(self):
-        choice = input("Escolha uma opção: ")
-        return choice
-    
+        return input("Escolha uma opção: ")
+
     def run(self):
         while True:
             try:
@@ -39,8 +39,8 @@ class Produto_View:
 
     def show_message(self, message):
         print(f"[INFO]: {message}")
-    
-    def get_nome(self, default_nome =""):
+
+    def get_nome(self, default_nome=""):
         return input(f"Nome [{default_nome}]: ") or default_nome
 
     def get_valor(self, default_valor=0.0):
@@ -51,64 +51,61 @@ class Produto_View:
             except ValueError:
                 print("[ERRO] Valor deve ser um número!")
 
-    
     def get_estoque(self, default_estoque=0):
         while True:
             estoque_input = input(f"Estoque [{default_estoque}]: ") or str(default_estoque)
             if estoque_input.isdigit():
                 return int(estoque_input)
-            else:
-                print("[ERRO] Estoque deve ser um número inteiro!")
+            print("[ERRO] Estoque deve ser um número inteiro!")
 
-    
     def get_id(self):
-        id_input = input("ID do Produto: ")
-        return int(id_input)
-    
+        return int(input("ID do Produto: "))
+
     def get_dados_produto(self, produto=None):
         if produto is None:
             nome = self.get_nome()
             valor = self.get_valor()
             estoque = self.get_estoque()
         else:
-            nome = self.get_nome(produto._nome)
-            valor = self.get_valor(produto._valor)
-            estoque = self.get_estoque(produto._estoque)
-        return {"nome": nome,
-                "valor": valor, 
-                "estoque": estoque
-                }
-    
+            nome = self.get_nome(produto.nome)
+            valor = self.get_valor(produto.valor)
+            estoque = self.get_estoque(produto.estoque)
+
+        return {
+            "nome": nome,
+            "valor": valor,
+            "estoque": estoque
+        }
+
     def show_produtos(self, produtos):
         if not produtos:
-             print("Nenhum produto cadastrado.")
-             return
-        print("-" * 65)
-        print(f"{'LISTA DE PRODUTOS':^65}")
-        print("-" * 65)
-        print(f"{'ID':<5} {'NOME':<20} {'VALOR':<10} {'ESTOQUE':<10} {'VALOR EM ESTOQUE':<20}")
+            print("Nenhum produto cadastrado.")
+            return
+
+        print("-" * 80)
+        print(f"{'LISTA DE PRODUTOS':^80}")
+        print("-" * 80)
+        print(f"{'ID':<5} {'NOME':<20} {'VALOR':<12} {'ESTOQUE':<10} {'VALOR EM ESTOQUE':<20}")
+
         for produto in produtos:
-            print(f"{produto._id:<5} {produto._nome:<20} R$ {produto._valor:<10.2f} {produto._estoque:<10} R$ {produto._valor_em_estoque:<20.2f}")
-    
+            print(
+                f"{produto.id:<5} "
+                f"{produto.nome:<20} "
+                f"R$ {produto.valor:<10.2f} "
+                f"{produto.estoque:<10} "
+                f"R$ {produto.valor_em_estoque:<20.2f}"
+            )
+
     def show_produto_details(self, produto):
         if produto is None:
             print("Produto não encontrado.")
             return
-        print("-" * 20)
+
+        print("-" * 40)
         print(f"{'DETALHES DO PRODUTO':^40}")
-        print("-" * 20)
-        print(f"ID: {produto._id}")
-        print(f"Nome: {produto._nome}")
-        print(f"Valor: R$ {produto._valor:.2f}")
-        print(f"Estoque: {produto._estoque}")
-        print(f"Valor em Estoque: R$ {produto._valor_em_estoque:.2f}")
-        print("-" * 20)
-
-
-        
-
-
-
-
-
-        
+        print("-" * 40)
+        print(f"ID: {produto.id}")
+        print(f"Nome: {produto.nome}")
+        print(f"Valor: R$ {produto.valor:.2f}")
+        print(f"Estoque: {produto.estoque}")
+        print(f"Valor em Estoque: R$ {produto.valor_em_estoque:.2f}")
