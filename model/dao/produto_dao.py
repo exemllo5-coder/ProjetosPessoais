@@ -47,7 +47,7 @@ class Produto_DAO:
             p._id = row[0]
             return p
         return None
-
+    
     def update(self, produto: Produto):
         sql = """
         UPDATE produto
