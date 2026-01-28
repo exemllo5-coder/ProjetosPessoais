@@ -1,0 +1,113 @@
+Crie um aplicativo de mensagens instantâneas completo, inspirado no WhatsApp, com foco em comunicação em tempo real, interface moderna e código organizado e escalável.
+
+O app deve funcionar como um mensageiro real, com usuários, conversas e troca de mensagens ao vivo.
+
+👤 SISTEMA DE USUÁRIOS
+
+Cadastro de usuário com:
+
+Nome
+
+Foto de perfil
+
+Número ou ID único
+
+Login e logout
+
+Status do usuário (online / offline)
+
+💬 CONVERSAS
+
+Lista de conversas recentes na tela inicial
+
+Mostrar:
+
+Foto do contato
+
+Nome
+
+Última mensagem
+
+Horário da última mensagem
+
+Conversas individuais (1x1)
+
+Criar estrutura preparada para grupos no futuro
+
+✉️ MENSAGENS
+
+Envio de mensagens de texto em tempo real
+
+Bolhas de mensagem:
+
+Mensagens enviadas (lado direito)
+
+Mensagens recebidas (lado esquerdo)
+
+Horário da mensagem
+
+Rolagem automática para a última mensagem
+
+📎 MÍDIA (simulado se necessário)
+
+Envio de:
+
+Imagens
+
+Áudios (simulação)
+
+Ícones para anexos
+
+🔔 RECURSOS IMPORTANTES
+
+Notificação de nova mensagem
+
+Indicador "digitando..."
+
+Confirmação de envio:
+
+✓ enviada
+
+✓✓ entregue
+
+✓✓ azul lida
+
+🟢 INTERFACE
+
+Visual muito parecido com WhatsApp:
+
+Barra superior com nome do contato
+
+Ícone de chamada
+
+Ícone de vídeo
+
+Tela de chat limpa
+
+Tema claro
+
+🧠 LÓGICA DO APP
+
+Organizar o projeto em módulos:
+
+Autenticação
+
+Usuários
+
+Conversas
+
+Mensagens
+
+Interface (UI)
+
+Sistema de tempo real (simulação ou websocket)
+
+⚡ PERFORMANCE E QUALIDADE
+
+Código limpo
+
+Fácil de adicionar chamadas de vídeo no futuro
+
+Estrutura escalável
+
+O aplicativo deve parecer um mensageiro real, não apenas uma interface estática.
